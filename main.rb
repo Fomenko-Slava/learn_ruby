@@ -1,5 +1,5 @@
 if ARGV.length == 4
-  point_1, point_2 = Array[ARGV[0], ARGV[1]], Array[ARGV[2], ARGV[3]]
+  point_1, point_2 = [ARGV[0], ARGV[1]], [ARGV[2], ARGV[3]]
 
   if point_1 == point_2
     puts 'Точка найдена!'
