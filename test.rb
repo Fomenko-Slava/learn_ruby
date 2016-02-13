@@ -1,4 +1,4 @@
-require 'pry'
+#require 'pry'
 #puts '1'.integer?
 
 #puts "интерполяция %s %s" % [1, 2]
@@ -19,6 +19,15 @@ require 'pry'
 
 #puts 'ddd'.methods
 
-puts self.methods
+#p $LOAD_PATH
 
-binding.pry
+#puts self.methods
+
+#binding.pry
+
+arr = Array.new(3) {|i| (i+1) }
+
+arr1 = arr.clone
+arr1 << 9
+p arr
+p arr1

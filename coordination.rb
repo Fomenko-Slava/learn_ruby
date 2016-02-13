@@ -36,3 +36,5 @@ end
 
 coord = Coordination.new({x:ARGV[0], y:ARGV[1]})
 coord.check
+puts coord.x
+puts coord.radiuses
