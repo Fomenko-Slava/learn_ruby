@@ -7,7 +7,7 @@ class SeniorDeveloper < Developer
   def work!
     if [true, false].sample
       super
-      super
+      super if !@tasks.empty?
     else
       puts 'Что-то лень'
     end

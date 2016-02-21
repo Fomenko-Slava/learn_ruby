@@ -8,6 +8,7 @@ senior = SeniorDeveloper.new('Сениор')
 
 senior.add_task('Сделать всё')
 senior.add_task('Залить всё')
+senior.add_task('Третья таска')
 
 senior.work!
 senior.work!
