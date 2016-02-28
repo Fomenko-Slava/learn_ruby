@@ -3,15 +3,16 @@ class Developer
   class EmptyTasks < StandardError; end
   class TooMuchTasks < StandardError; end
 
-  def initialize(name)
+  def initialize(name, type)
     @name = name
+    @type = type
     @tasks = []
   end
 
   MAX_TASKS = 10
   STATUSES = {free: 'свободен', working: 'работаю', busy: 'занят'}
 
-  attr_accessor :name
+  attr_accessor :name, :type
   attr_reader :tasks
 
   def add_task(task)
@@ -25,11 +26,11 @@ class Developer
         [@name, task, @tasks.size]
   end
 
-  def tasks
-    @tasks.each_with_index.map {|val, key|
-      "#{key+1}. #{val}"
-    }.join("\n")
-  end
+  # def tasks
+  #   @tasks.each_with_index.map {|val, key|
+  #     "#{key+1}. #{val}"
+  #   }.join("\n")
+  # end
 
   def check_tasks
     raise EmptyTasks, 'Нечего делать!' if @tasks.empty?
@@ -46,7 +47,7 @@ class Developer
     case
       when @tasks.empty?
         STATUSES[:free]
-      when @tasks.size < MAX_TASKS
+      when @tasks.size < self.class::MAX_TASKS
         STATUSES[:working]
       else
         STATUSES[:busy]
