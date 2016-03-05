@@ -1,0 +1,10 @@
+<%= link_to 'Все предложения', petitions_path %>
+<%= link_to 'Edit', edit_petition_path(@petition) %>
+
+<div>Предложение</div>
+<p>
+  <%= @petition.title %>
+</p>
+<p>
+    <%= @petition.description %>
+</p>
