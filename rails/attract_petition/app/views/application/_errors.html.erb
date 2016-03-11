@@ -1,0 +1,9 @@
+<% if validate_item.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% validate_item.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>

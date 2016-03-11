@@ -1,20 +1,3 @@
-<h1>Все предложения</h1>
-<%= link_to 'Создать предложение', new_petition_path %>
-<table border="1">
-  <tr>
-    <th>Название</th>
-    <th>Автор(пока описание)</th>
-    <th colspan="2">Опции</th>
-  </tr>
+<h2>Последние петиции </h2>
 
-  <% @petitions.each do |petition| %>
-      <tr>
-        <td><%= link_to petition.title, petition_path(petition) %></td>
-        <td><%= petition.description %></td>
-        <td><%= link_to 'Edit', edit_petition_path(petition) %></td>
-        <td><%= link_to 'Delete', petition_path(petition),
-                        method: :delete,
-                        data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-  <% end %>
-</table>
+<%= render 'petitions_table' %>

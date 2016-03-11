@@ -1,0 +1,46 @@
+#all_site{
+  width: 800px;
+  margin: 0 auto;
+}
+.clear{
+  clear: both;
+}
+header{
+  h1{
+    text-align: center;
+  }
+  .logo{
+    float: left;
+  }
+  .sign_menu{
+    float: right;
+  }
+}
+.notices{
+  padding: 5px;
+}
+footer{
+  margin-top: 20px;
+
+  .copyright span{
+    float: right;
+  }
+}
+.wrapper{
+  #content{
+    float: left;
+  }
+  #right_menu{
+    float: right;
+    ul{
+      list-style: none;
+    }
+  }
+}
+
+form.new_user>div{
+  padding: 5px;
+  label{
+    display: block;
+  }
+}
