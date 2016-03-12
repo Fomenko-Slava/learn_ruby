@@ -1,0 +1,13 @@
+<h2>Петиция</h2>
+
+<% if (current_user && @petition.user_id == current_user.id) %>
+    <%= link_to 'Edit', edit_petition_path(@petition) %>
+<% end  %>
+
+<p>
+  <strong><%= @petition.title %></strong>
+</p>
+
+<p>
+    <%= @petition.description %>
+</p>
