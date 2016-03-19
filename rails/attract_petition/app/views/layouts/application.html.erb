@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Petition</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="all_site">
+  <header>
+    <div class="logo"><%= link_to 'Логотип', root_path %></div>
+    <div class="sign_menu">
+      <% if current_user  %>
+          <%= current_user.email %>(<%= link_to 'Выйти', logout_path %>)
+      <% else %>
+          <%= link_to 'Регистрация', signup_path %> |
+          <%= link_to 'Войти', login_path %>
+      <% end %>
+    </div>
+    <h1>Онлайн петиции</h1>
+  </header>
+
+  <div class="notices">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, id: "flash_#{name}" %>
+    <% end %>
+  </div>
+
+  <div class="wrapper">
+    <div id="content">
+      <%= yield %>
+    </div>
+    <div id="right_menu">
+      <%= render 'right_menu' %>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+  <footer>
+    <div class="copyright">
+      Copyright © 2016 Ruby cources
+      <span>ДЗ Фоменко Вячеслава</span>
+      <div class="clear"></div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

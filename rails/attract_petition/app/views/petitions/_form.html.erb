@@ -1,0 +1,19 @@
+<%= form_for @petition do |f| %>
+
+    <p>
+      <%= f.label :title, 'Название' %><br>
+      <%= f.text_field :title %>
+    </p>
+
+    <p>
+      <%= f.label :description, 'Описание' %><br>
+      <%= f.text_area :description %>
+    </p>
+
+    <%= render 'errors', validate_item: @petition %>
+
+    <p>
+      <%= f.submit %>
+    </p>
+
+<% end %>
